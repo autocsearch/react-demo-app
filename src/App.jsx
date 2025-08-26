@@ -1,16 +1,10 @@
 import "./App.css";
-import Signin from "./pages/Signin";
-import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
+import Routes from "./Routes";
 
 function App() {
   return (
-    <main className="flex items-center justify-center min-h-[700px] w-screen">
-      <Card>
-        <CardContent>
-          <Signin />
-        </CardContent>
-      </Card>
+    <main className="">
+      <Routes />
     </main>
   );
 }

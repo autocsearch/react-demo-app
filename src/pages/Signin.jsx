@@ -1,44 +1,38 @@
-import Button from "@mui/material/Button";
-import TextField from "@mui/material/TextField";
-import Alert from "@mui/material/Alert";
-
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import SigninForm from "../components/SigninForm";
+import Slider from "react-slick";
 
 export default function Signin() {
-  const [phoneNumber, setPhoneNumber] = useState("");
-  const [error, setError] = useState("");
-  const [success, setSuccess] = useState(false);
-
-  const navigate = useNavigate();
-
-  const submitHandler = (e) => {
-    e.preventDefault();
-    const phoneRegex = /^\+[1-9]\d{1,14}$/;
-
-    if (!phoneRegex.test(phoneNumber)) {
-      setError("Invalid phone number");
-      setSuccess(false);
-    } else {
-      setError("");
-      setSuccess(true);
-      navigate("/dashboard");
-    }
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 600,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false, // remove arrows
+    pauseOnHover: true,
   };
 
   return (
-    <>
-      <form onSubmit={submitHandler} className="flex flex-col space-y-5">
-        <h2>Enter your Phone number</h2>
-        <div className="flex gap-3">
-          <TextField id="outlined-basic" label="Outlined" variant="outlined" placeholder="+1 xxx xxxx xxxx" type="tel" onChange={(e) => setPhoneNumber(e.target.value)} />
-          <Button variant="outlined" type="submit">
-            send
-          </Button>
-        </div>
-        {error && <Alert severity="error">{error}</Alert>}
-        {success && <Alert severity="success">Phone number is valid!</Alert>}
-      </form>
-    </>
+    <main className="flex min-h-screen items-center gap-10 p-8 bg-[#982B1C]">
+      {/* LEFT IMAGE CAROUSEL */}
+      <div className="flex-1 h-[calc(90vh-3rem)] rounded-2xl flex items-center justify-center bg-[#F2E8C6] shadow-lg">
+        <figure className="hidden lg:flex items-center justify-center w-full h-full p-8">
+          <Slider {...settings} className="w-[900px]">
+            {["/Photo1.png", "/Photo2.png", "/Photo3.png"].map((src, idx) => (
+              <div key={idx} className="flex justify-center">
+                <img src={src} alt={`Slide ${idx + 1}`} className="rounded-2xl object-cover w-[900px] h-[550px] shadow-md transition-transform duration-500 hover:scale-[1.02]" />
+              </div>
+            ))}
+          </Slider>
+        </figure>
+      </div>
+
+      {/* RIGHT LOGIN FORM */}
+      <div className="w-[450px] h-[calc(90vh-3rem)] bg-[#F2E8C6] p-8 rounded-2xl shadow-xl">
+        <SigninForm />
+      </div>
+    </main>
   );
 }
