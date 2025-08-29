@@ -1,12 +1,42 @@
-# React + Vite
+# React Demo App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A demo React application built using **Vite**, **React Router**, **Material UI**, **Tailwind CSS**, and **React Slick**. This project demonstrates a modern React setup with routing, responsive styling, and interactive components.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## Expanding the ESLint configuration
+- SPA (Single Page Application) with **React Router** for navigation
+- Styled with **Tailwind CSS** and **Material UI** components
+- Interactive carousel using **React Slick**
+- Linting setup with **ESLint**
+- Unit testing with **Vitest** and **Testing Library**
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## Getting Started
+
+### 1. Clone the repository
+
+```bash
+git clone <your-repo-url>
+cd react-demo-app
+```
+
+npm install
+
+npm run dev
+
+npm run test
+
+Tech Stack :
+
+React 19.x
+
+- Vite 7.x
+- Material UI 7.x
+- Tailwind CSS 4.x
+- React Router DOM 7.x
+- React Slick & Slick Carousel 0.x
+
+Dev tools: ESLint, Vitest, Testing Library
