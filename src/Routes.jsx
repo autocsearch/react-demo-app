@@ -3,6 +3,12 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./pages/Home";
 import Signin from "./pages/Signin";
 
+import Aboutus from "./components/Aboutus";
+import Dashboard from "./components/Dashboard";
+import OurWork from "./components/Work/OurWork";
+import Teams from "./components/Teams";
+import WorkDetails from "./components/Work/WorkDetails"; // ⬅️ add this
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -13,8 +19,24 @@ const router = createBrowserRouter([
     element: <Home />,
   },
   {
-    path: "/signin",
-    element: <Signin />,
+    path: "/dashboard",
+    element: <Dashboard />,
+  },
+  {
+    path: "/ourwork",
+    element: <OurWork />,
+  },
+  {
+    path: "/ourwork/:workDetails",
+    element: <WorkDetails />,
+  },
+  {
+    path: "/teams",
+    element: <Teams />,
+  },
+  {
+    path: "/aboutus",
+    element: <Aboutus />,
   },
 ]);
 

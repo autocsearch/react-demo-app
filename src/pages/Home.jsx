@@ -2,7 +2,7 @@ import Navbar from "../components/Navbar";
 import Aboutus from "../components/Aboutus";
 import Dashboard from "../components/Dashboard";
 import Teams from "../components/Teams";
-import OurWork from "../components/OurWork";
+import OurWork from "../components/Work/OurWork";
 
 export default function Home() {
   return (
@@ -10,16 +10,16 @@ export default function Home() {
       <div className="p-4">
         <Navbar />
       </div>
-      <div>
+      <div id="Home">
         <Dashboard />
       </div>
-      <div>
+      <div id="AboutUs">
         <Aboutus />
       </div>
-      <div>
+      <div id="Teams">
         <Teams />
       </div>
-      <div>
+      <div id="OurWork">
         <OurWork />
       </div>
     </div>
